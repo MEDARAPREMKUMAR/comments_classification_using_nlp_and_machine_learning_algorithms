@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="container" >
+<div class="well well-lg">
+    <h2>Comments Classification using NLP and Machine Learning Algorithms</h2>
+	<br>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="toxic">Enter Comment:</label>
+			<input type="text" class="form-control" placeholder="Enter Comment" name="toxic" required>
+		</div>
+		<br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg " id="btn-predict" formaction="/predict">Predict!</button>
+        </div>
+    </div>
+    <div>
+    	<h3>Result: <b>{{res}}</b></h3>
+		<h6>Toxic Percentage: <b>{{result}}</b></h6>
+    </div>
+    <p>Total Execution Time is: <b>{{execution_time}}</b> seconds </p>
+</div>
+{% endblock %}
